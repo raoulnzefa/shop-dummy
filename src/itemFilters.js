@@ -1,0 +1,1 @@
+export const itemFilters = ['All', 'Shirts', 'Shoes', 'Graphic Tees', 'Shorts', 'Pants', 'Accessories'];
