@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
-        <h1 class="text-center">Men's</h1>
-        <app-sidebar @filter="filter = $event"></app-sidebar>
+        <h1 class="text-center">{{ header }}</h1>
+        <app-sidebar :department="$route.path" @filter="filter = $event"></app-sidebar>
         <div class="row no-gutters">
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" v-for="(d, index) in data" :key="d.id" v-if="filter == d.type || filter == 'All'">
                 <router-link :to="'men/' + d.id" tag="div" class="item text-center my-1"  @click.native="getItem(index)">
@@ -15,13 +15,14 @@
 </template>
 
 <script>
-import { data } from '../fakerData';
+import { mItems, wItems } from '../fakerData';
 import Sidebar from '../components/Sidebar.vue';
 
 export default {
     data(){
         return {
-            data: data,
+            data: '',
+            header: "",
             filter: "All"
         }
     },
@@ -29,10 +30,29 @@ export default {
         getItem(index){
             var item = data[index];
             this.$store.state.currItem = item;
+        },
+        getDepartmentData(){
+            if(this.$route.path == '/men'){
+                this.header = "Men's";
+                this.data = mItems;
+            }
+            else {
+                this.header = "Women's";
+                this.data = wItems;
+            }
+            this.filter = 'All';
         }
     },
     components: {
         "app-sidebar": Sidebar
+    },
+    watch: {
+        '$route' (to, from) {
+            this.getDepartmentData();
+        }
+    },
+        mounted(){
+        this.getDepartmentData();
     }
 }
 </script>

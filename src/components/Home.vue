@@ -7,18 +7,27 @@
                 <router-link to="/men" tag="button" class="btn btn-lg">Explore</router-link>
             </div>
         </div>
-        <div class="banner women-banner">
+        <div class="text-center p-5">
+            <h3>Choose from hundreds of styles</h3>
+            <h5>Step up your game with Over Armour</h5>
+        </div>
+        <div class="women-banner">
             <div class="women-button">
                 <h2>Shop Women's</h2>
                 <router-link to="/women" tag="button" class="btn btn-lg">Explore</router-link>
             </div>
         </div>
+        <app-about></app-about>
     </div>
 </template>
 
 <script>
-    export default {
+    import About from "./About.vue";
 
+    export default {
+        components: {
+            "app-about": About
+        }
     }
 </script>
 

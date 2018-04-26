@@ -1,6 +1,6 @@
 {
-  "name": "client",
-  "description": "A Vue.js project",
+  "name": "shop-dummy",
+  "description": "A Vue.js project showcasing a responsive, beautiful front-end and a CRUD backend.",
   "version": "1.0.0",
   "author": "Austin <austintrichburg@gmail.com>",
   "license": "MIT",
