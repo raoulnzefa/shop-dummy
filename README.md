@@ -1,6 +1,6 @@
 # client
 
-> A Vue.js project
+> A Vue.js project that is designed to emulate an e-commerce web store. Made using Vue, Bootstrap, HTML, and CSS.
 
 ## Build Setup
 
