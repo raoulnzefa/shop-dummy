@@ -1,5 +1,7 @@
 # client
 
+https://austinrichburg.github.io/shop-dummy/#/
+
 > A Vue.js project that is designed to emulate an e-commerce web store. Made using Vue, Bootstrap, HTML, and CSS.
 
 ## Build Setup
